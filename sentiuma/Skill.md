@@ -1,5 +1,5 @@
 ---
-name: product-context
+name: sentiuma
 description: Generate a product-facing view of a codebase for PMs and CPOs. Use when someone asks to understand a system from a product perspective, generate product context, understand what a product can do, identify constraints for product decisions, or prepare for product discovery work. Triggers on phrases like "what can this system do", "help me understand this product", "generate product context", "what are the constraints", or "prepare for discovery". Outputs structured markdown to .sentiuma/plans/ using Continuous Discovery Habits framework.
 ---
 
@@ -107,7 +107,7 @@ flowchart TB
 
 Create `.sentiuma/plans/product-context.md`:
 
-```markdown
+````markdown
 # Product Context: [Product Name]
 
 Generated: [timestamp]
@@ -122,7 +122,7 @@ Source: [repo path]
 ```mermaid
 erDiagram
     [Generated from models/schemas]
-```
+````
 
 ### Core User Journeys
 ```mermaid
@@ -139,7 +139,7 @@ flowchart TB
 ## Capabilities
 What users can do:
 
-### [Area]
+\#\## [Area]
 - **What**: [description]
 - **Where**: [files/routes]
 - **Constraints**: [limits]
@@ -147,7 +147,7 @@ What users can do:
 ## Core Entities
 Main objects in the system:
 
-### [Entity]
+\#\## [Entity]
 - **Purpose**: [what it represents]
 - **Attributes**: [key fields]
 - **Relationships**: [connections]
@@ -165,9 +165,9 @@ type EntityName = {
 ## Component Inventory
 Existing UI components available for reuse:
 
-| Component | Location | Purpose | Extensible? |
-|-----------|----------|---------|-------------|
-| [name] | [path] | [what it does] | [yes/no] |
+| Component | Location | Purpose        | Extensible? |
+| --------- | -------- | -------------- | ----------- |
+| [name]    | [path]   | [what it does] | [yes/no]    |
 
 ## State Patterns
 How state is managed:
@@ -193,17 +193,17 @@ Hard-to-change assumptions:
 [Based on capabilities]
 
 ### Assumptions to Test  
-[Baked into implementation]
+
 
 ### Opportunities
 [Gaps identified]
-```
+````
 
 ### 5. Directory Setup
 
 ```bash
 mkdir -p .sentiuma/plans
-```
+````
 
 Output to `.sentiuma/plans/product-context.md`. Timestamp if exists.
 
